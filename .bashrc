@@ -57,9 +57,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='\n${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='\n${debian_chroot:+($debian_chroot)}\u@\h:\w\n$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -111,13 +111,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-PATH=~/.dotnet:$PATH:/opt/oryx:/opt/nodejs/lts/bin:/opt/python/latest/bin:/opt/yarn/stable/bin:~/.local/bin:~/.npm-global/bin
-
-PS1='\[]0;\u: \w\]\[[01;32m\]\u\[[00m\]:\[[01;34m\]\w\[[00m\]$ '
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export NVS_HOME="$HOME/.nvs"
-[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
